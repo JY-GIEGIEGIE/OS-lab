@@ -1,10 +1,5 @@
 # Lab 0: GDB & QEMU 调试 64 位 RISC-V LINUX
 
-!!! tip "DDL"
-
-    寿黎但班DDL: 2025.10.12 23:59
-
-    
 ## 实验目的
 
 - 使用交叉编译工具, 完成Linux内核代码编译
@@ -234,7 +229,7 @@ $ sudo apt install gdb-multiarch
 
 !!! note "截至写作时，最新的 Linux 内核版本是 6.11-rc6."
 
-并且使用 git 工具 clone [本仓库](https://git.zju.edu.cn/zju-os-sld/os-25fall)。其中已经准备好了根文件系统的镜像。
+并且使用 git 工具 clone [本仓库](https://git.zju.edu.cn/zju-os-sld/os-26fall)。其中已经准备好了根文件系统的镜像。
 
 !!! note "根文件系统为 Linux Kernel 提供了基础的文件服务，在启动 Linux Kernel 时是必要的。"
 

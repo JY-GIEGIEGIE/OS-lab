@@ -1,78 +1,99 @@
-# 浙江大学25年操作系统实验
+# 前言
 
-本[仓库](https://git.zju.edu.cn/zju-os-sld/os-25fall)是浙江大学25年秋**操作系统**课程的教学仓库，包含所有实验文档和公开代码。实验文档已经部署在了[zju-git pages](https://zju-os-sld.pages.zjusct.io/os-25fall)上，方便大家阅读。
+本文档适用于李环、柳晴老师授课的班级，助教为任飞扬、徐浩然、卢梓玥。
 
-<!-- ```bash
-├── README.md
-├── docs/       # 实验文档   
-├── mkdocs.yml
-└── src/        # 公开代码
-``` -->
+实验详细指导文档：https://zju-os-sld.pages.zjusct.io/os-26fall 
+
+实验代码仓库：https://git.zju.edu.cn/zju-os-sld/os-26fall
+
+注：实验遵循本班教学要求来，不需要按照实验详细指导-常见问题及答疑-实验提交要求
+
+## 实验相关要求
+
+### 课程分数构成
+
+- 期末考试（50%）
+- 平时分（50%）
+    - 作业（5%）
+    - 课堂小测（5%）
+    - 实验（30%）
+        - 实验报告（10%）
+        - 实验验收（20%）
+    - 上机考试（10% + 5% bonus）<与实验内容相关>
+
+注：bonus不会溢出平时分总分。
+
+### 实验安排和分数占比
+
+初步拟定DDL，如果更新会及时通知
+
+| **实验**                        | **报告截止日期** | **验收截止日期** | **分数占比**                 |
+| --------------------------- | ------------ | ------------ | ------------------------ |
+| 实验0：RISC-V 64内核调试    |    10.2          |    不用验收    | 5%                       |
+| 实验1：内核引导&时钟和中断  |   10.16           |    10.23          | 15%                      |
+| 实验2：线程调度&上下文切换  |   10.30           |   11.6           | 15%                      |
+| 实验3：虚拟内存管理         |   11.20           |   11.27            | 15%                      |
+| 实验4：用户态程序&系统调用           |     12.4      |     12.11         | 20%                      |
+| 实验5：Page fault &Fork     |     12.25         |      12.25       | 20%                      |
+| 实验6：File System |    1.3          |    1.3(暂定)          | 10% |
+
+所有实验要求学生独立完成，迟交报告及验收会视情况给出惩罚。
+
+### 关于实验报告
+
+一般实验报告截止日期在实验发布后2周，特殊情况会说明，延迟会有惩罚
+
+- 提交物：本实验完整代码的压缩文件 & 实验报告，名字都命名为`labX_姓名_学号`
+- 关于代码：
+    - 代码提供 **详细注释** ，每5行左右给出注释，中英文不限
+    - 需要正确通过实验指导文档中的编译与测试
+    - 提交 **make clean** 清理之后的代码压缩文件
+    - **禁止Cheating** 
+- 关于报告：
+    - **内容为王**，建议使用markdown，latex等编写报告，不建议使用word编写
+    - **结构清晰、分级明确**
+    - 提交 **pdf** 文件
+    - 不要遗漏讨论与心得以及思考题，这部分很重要
+
+- 报告具体内容要求包括：
+    - 实验具体过程与相应代码实现
+    - 实验结果与简要说明
+    - 讨论与心得（实验中遇到的问题以及解决方法、心得体悟）
+    - 思考题
+    - AI使用情况（明确指出使用了什么工具，如何使用）
+
+!!! tip 
+    - 在实验具体过程与代码实现中展示 **实现步骤/思路** 和 **核心代码** 即可，不需要大段复制实验指导书的内容，也不需要大段粘贴代码和大片截图，过程讲清楚即可
+        - 如要展示代码，需以非纯文本的形式展示（需要使用代码块）
+
+> 注：实验0不需要进行代码的提交，只需要提交报告；其余实验需要提交代码和报告。
+
+最后，关于代码和报告，需要 **分开上传** ，即代码压缩文件加上报告，而不是一个压缩文件里面包含了代码和报告。
+
+### 关于实验验收
+
+一般验收截止日期在实验发布后三周之内的实验课，特殊情况会说明，延迟会有惩罚
+
+- **鼓励提前验收** ,防止大家都堵在某一周验收,提高验收效率
+- 验收时需要看代码运行的情况,建议提前把准备工作做好,提高效率
+- 验收会提问,关于代码细节,工具使用以及基础实验理解（包括但不限于实验指导中的问题）等等
+- 如果有实验问题需要线下提问，可以等到其他同学线下验收完成后再来
+- **不要根据以往的仓库做实验，实验会有变动**
+- 请主动拒绝cheat！！！
+- 另：今年有机考，请注意实验的理解！
 
 
+> 注：实验0不需要进行现场验收，其余实验均需要在实验课进行验收
 
-## 实验任务与要求
+### 关于AI使用
 
-- 请各位同学独立完成作业，任何抄袭行为都将使本次作业判为0分。
-- 在学在浙大中提交 pdf 格式的实验报告以及相应的实验资料：
-    - 记录实验过程并截图，并对每一步的命令以及结果进行必要的解释；
-    - 记录遇到的问题和心得体会；
-    - 完成思考题。
+鼓励同学们使用AI进行辅助编程，良好的使用方式有：
 
-!!! tip "关于实验报告内容细节要求，请移步：[常见问题及解答 - 实验提交要求](faq.md#_2)"
+- AI 辅助，我主导编写：我自己写大部分代码，只在遇到bug或不懂的地方请AI帮忙
+- 用 AI 学习编程概念：我主要用 AI 来学习语法、概念、算法原理，而不是直接写项目。
+- 和 AI 协同调试：我让 AI 帮我分析报错信息，提供解决思路，自己来修改代码。
+- 用 AI 梳理项目：我会让 AI 帮我梳理实验框架，厘清逻辑关系和流程。
+- 代码优化和重构：我会让 AI 帮我检查已有代码的性能、可读性，并提出优化建议。
+- 用 AI 辅助完善注释：我先自己写核心注释勾勒逻辑，再让 AI 补充细节说明，让注释更完整易懂。
+- 允许用AI辅助报告撰写，但不要丢弃人的主体地位，学会主导，理解与思考
 
-## 本地渲染文档
-
-文档采用了 [mkdocs-material](https://squidfunk.github.io/mkdocs-material/) 工具构建和部署。如果想在本地渲染：
-
-```bash
-$ pip3 install mkdocs-material                      # 安装 mkdocs-material
-$ git clone https://git.zju.edu.cn/zju-os-sld/os-25fall # clone 本 repo
-$ mkdocs serve                                      # 本地渲染
-INFO     -  Building documentation...
-INFO     -  Cleaning site directory
-...
-INFO     -  [11:45:14] Serving on http://127.0.0.1:8000/os-25fall
-```
-
-
-## 致谢
-
-感谢以下各位老师和助教的辛勤付出！
-
-[申文博](https://wenboshen.org/)、[周亚金](https://yajin.org/)、徐金焱、周侠、管章辉、张文龙、刘强、孙家栋、周天昱、庄阿得、王琨、沈韬立、王星宇、朱璟森、谢洵、[潘子曰](https://pan-ziyue.github.io/)、朱若凡、季高强、郭若容、杜云潇、吴逸飞、李程浩、朱家迅、王行楷、陈淦豪、赵紫宸、[王鹤翔](https://tonycrane.cc)、许昊瑞、[朱宝林](https://github.com/bowling233)、[张恒斌](https://github.com/hharryz)。
-
-
-
-## 最优质的链接
-
-##### 操作系统实现&课程
-
-1. [季江明、王海帅班课程实验 (TA:朱宝林、张恒斌)](https://zju-os.github.io/doc/)
-2. [NJU蒋炎炎OS实验](https://jyywiki.cn/OS/2025/)
-3. [全国大学生操作系统比赛](https://github.com/oscomp)
-4. [rCore-Tutorial-Book](https://rcore-os.cn/rCore-Tutorial-Book-v3/)
-5. [开源操作系统学习与训练中心](https://github.com/LearningOS)
-
-##### Linux使用入门
-
-1. [The Missing Semester of Your CS Education](https://missing-semester-cn.github.io/2020/shell-tools)
-2. [GNU/Linux Command-Line Tools Summary](https://tldp.org/LDP/GNU-Linux-Tools-Summary/html/index.html)
-3. [Basics of UNIX](https://github.com/berkeley-scf/tutorial-unix-basics)
-4. [lec1: Shell 基础及 CLI 工具推荐 - 实用技能拾遗](https://slides.tonycrane.cc/PracticalSkillsTutorial/2023-fall-ckc/lec1/ )
-
-##### 技术手册
-
-1. [RISC-V 技术手册](https://riscv.atlassian.net/wiki/spaces/HOME/pages/16154769/RISC-V+Technical+Specifications)
-2. [RISC-V 汇编教程](https://riscv-programming.org/)
-3. [as 汇编器手册](https://sourceware.org/binutils/docs/as.html)
-4. [ld 链接器手册](https://sourceware.org/binutils/docs/ld.html)
-5. [binutils 工具集（objdump、readelf）手册](https://sourceware.org/binutils/docs/binutils.html)
-6.  [gcc 编译器手册](https://gcc.gnu.org/onlinedocs/)
-
-<!-- 往年实验仓库，有兴趣的可以提前推进度，~~别跟老师提~~
-
-[私藏的OS2024全套实验](https://github.com/JuniorSNy/zju-os-sld)
-[私藏的OS2023全套实验](https://github.com/JuniorSNy/os24fall-stu-full)
-
- -->
