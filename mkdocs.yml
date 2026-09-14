@@ -1,8 +1,8 @@
 site_name: 浙江大学26年操作系统实验
-site_url: https://zju-os-sld.pages.zjusct.io/os-26fall
+site_url: https://zju-os-lh.pages.zjusct.io/os-26fall
 site_dir: public # 设置 site_dir 配合 gitlab CI
-repo_url: https://git.zju.edu.cn/zju-os-sld/os-26fall
-repo_name: zju-os-sld/os-26fall
+repo_url: https://git.zju.edu.cn/zju-os-lh/os-26fall
+repo_name: zju-os-lh/os-26fall
 
 theme: 
   name: material

@@ -2,7 +2,7 @@
 
 本文档适用于李环、柳晴老师授课的班级，助教为任飞扬、徐浩然、卢梓玥。
 
-实验代码仓库：https://git.zju.edu.cn/zju-os-sld/os-26fall
+实验代码仓库：https://git.zju.edu.cn/zju-os-lh/os-26fall
 
 ## 实验相关要求
 

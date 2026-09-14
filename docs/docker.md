@@ -27,7 +27,7 @@
 - 打开终端：
 
     ```bash
-    docker exec -it zju-os-sld /usr/bin/fish
+    docker exec -it zju-os-lh /usr/bin/fish
     ```
 
 - 关闭并删除容器：
