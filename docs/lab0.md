@@ -234,8 +234,8 @@ $ sudo apt install gdb-multiarch
 !!! note "根文件系统为 Linux Kernel 提供了基础的文件服务，在启动 Linux Kernel 时是必要的。"
 
 ```bash
-$ git clone https://git.zju.edu.cn/zju-os-lh/os-25fall
-$ cd os-25fall/src/lab0
+$ git clone https://git.zju.edu.cn/zju-os-lh/os-26fall
+$ cd os-26fall/src/lab0
 $ ls
 rootfs.img  # 已经构建完成的根文件系统的镜像
 ```
