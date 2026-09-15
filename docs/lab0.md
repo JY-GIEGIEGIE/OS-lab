@@ -227,7 +227,7 @@ $ sudo apt install gdb-multiarch
 
 从 [https://www.kernel.org](https://www.kernel.org) 下载最新的 Linux 源码。
 
-!!! note "截至写作时，最新的 Linux 内核版本是 6.11-rc6."
+!!! note "截至写作时，最新的 Linux 内核版本是 7.2.6."
 
 并且使用 git 工具 clone [本仓库](https://git.zju.edu.cn/zju-os-lh/os-26fall)。其中已经准备好了根文件系统的镜像。
 
