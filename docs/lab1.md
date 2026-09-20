@@ -821,7 +821,7 @@ make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- <path/to/file(no suffix)>.i
     - 通过查看 [RISC-V Privileged Spec](https://github.com/riscv/riscv-isa-manual/releases/download/20240411/priv-isa-asciidoc.pdf) 中的 `medeleg` 和 `mideleg` 部分，解释上面 `MIDELEG` 和 `MEDELEG` 值的含义。
 
 
-## 验收标准
+<!-- ## 验收标准
 
 验收环节将从以下问题中随机挑选几个作为考核标准：
 
@@ -835,4 +835,4 @@ make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- <path/to/file(no suffix)>.i
 
 5. 使用 debug 工具展示整个 OS 项目中函数的跳转过程。
 
-6. 使用 gdb 追踪查看 `rdtime` 的值以及 `time` 的变化。
+6. 使用 gdb 追踪查看 `rdtime` 的值以及 `time` 的变化。 -->
