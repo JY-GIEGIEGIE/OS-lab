@@ -795,8 +795,9 @@ make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- <path/to/file(no suffix)>.i
 3. 用 `csr_read` 宏读取 `sstatus` 寄存器的值，对照 RISC-V 手册解释其含义并截图。
 4. 用 `csr_write` 宏向 `sscratch` 寄存器写入数据，并验证是否写入成功并截图。
 5. 详细描述你可以通过什么步骤来得到 `arch/arm64/kernel/sys.i`，给出过程以及截图。
-6. 寻找 Linux v6.0 中 ARM32 RV32 RV64 x86_64 架构的系统调用表；
-    - 请列出源代码文件，展示完整的系统调用表（宏展开后），每一步都需要截图。
+6. 寻找 Linux 中 ARM32 RV32 RV64 x86_64 架构的系统调用表；
+    - 请列出源代码文件，展示完整的系统调用表（宏展开后），每一步都需要截图
+    - 如有疑问，具体可以参考常见问题及解答的要求
 7. 阐述什么是 ELF 文件？尝试使用 readelf 和 objdump 来查看 ELF 文件，并给出解释和截图。
     - 运行一个 ELF 文件，然后通过 `cat /proc/PID/maps` 来给出其内存布局并截图。
 8. 在我们使用 make run 时，OpenSBI 会产生如下输出：
